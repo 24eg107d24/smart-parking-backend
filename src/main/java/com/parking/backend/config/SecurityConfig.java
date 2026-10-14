@@ -36,10 +36,7 @@ public class SecurityConfig {
 
                 CorsConfiguration configuration = new CorsConfiguration();
 
-                configuration.setAllowedOrigins(List.of(
-                                "http://localhost:5173",
-                                "http://localhost:5174",
-                                "https://smartparking-frontend-phi.vercel.app"));
+                configuration.setAllowedOriginPatterns(List.of("*"));
 
                 configuration.setAllowedMethods(List.of(
                                 "GET",

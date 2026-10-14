@@ -7,4 +7,4 @@ RUN chmod +x mvnw
 RUN ./mvnw dependency:go-offline
 COPY src src
 RUN ./mvnw clean package -DskipTests
-CMD ["sh", "-c", "java -jar target/*.jar"]
+CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar target/backend-0.0.1-SNAPSHOT.jar"]
