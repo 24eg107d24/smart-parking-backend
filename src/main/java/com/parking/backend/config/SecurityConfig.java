@@ -76,8 +76,17 @@ public class SecurityConfig {
                                                 .permitAll()
 
                                                 .requestMatchers(
+                                                                "/",
+                                                                "/api/health",
+                                                                "/error",
                                                                 "/api/auth/register",
                                                                 "/api/auth/login")
+                                                .permitAll()
+
+                                                .requestMatchers(
+                                                                HttpMethod.GET,
+                                                                "/api/locations/**",
+                                                                "/api/parking/**")
                                                 .permitAll()
 
                                                 .anyRequest().authenticated())
